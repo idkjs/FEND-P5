@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cat Clicker</title>
+</head>
+<body>
+    <ul id="cat-list"></ul>
+    <div id="cat">
+    <!-- knockout does not need html id's. it needs data binding. We dont have to take it out but here taken out for clarity. We will then add a class so that CSS can find it.-->
+<!--     <h2 id="cat-name"></h2>
+        <div id="cat-count"></div>
+        <img id="cat-img" src="" alt="cute cat"> -->
+
+<!-- Data-bind here will set h2 text to the 'name in the viewModel in js file. If we want to put multiple bindings inside of a data-bind we use multiple commas. 
+To bind and attribute use attr: {src: imgSrc}. If imgSrc changes in view model, the attr: {src: imgSrc} will change -->
+        <h2 data-bind="text: name"></h2> 
+        <h3 data-bind="text: catLevel"></h3>
+        <div data-bind="text: clickCount"></div>
+        <img src="" alt="cute cat" data-bind="click: incrementCounter, attr: {src: imgSrc}">
+    </div>
+    <script src="js/lib/knockout-3.2.0.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
