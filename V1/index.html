@@ -1,0 +1,31 @@
+<html>
+<head>
+	<meta charset='utf=8'>
+	<title>Cat Clicker V1</title>
+</head>
+<body>
+	<!-- Create DIV in HTML house the clicker -->
+	<div id='catclicker' width: 200px, height: 200px,>
+	<!-- set image path and max size of image -->
+	<img src='img/firstcat.jpg' max-width: '100px'><br>
+	<!-- add button to click -->
+	<button id='button'>Click Me</button>
+	<!-- add counter element -->
+	<!-- <a> is a document anchor. here it hold value of "clicks" -->
+	<p>Clicks: <a id='clicks'>0</a></p>
+	<!-- add script that will add click event listener and incrementer -->
+	<script type="text/javascript">
+	// defines the element you want to add event Listner to.
+	var button = document.getElementById('button');
+	// adds event listener. "click" is the js event being listened for. "onClick" is my function that tells what I want to happen after hearing click. 'false' is event public value see https://youtu.be/mC7FxTmgUuQ?t=4m13s
+	button.addEventListener('click', onClick, false);  
+	//the element has been clicked... do stuff here
+	 
+  	var clicks = 0;
+  	function onClick() {
+  		clicks += 1;
+		document.getElementById('clicks').innerHTML= clicks;
+	};
+	</script>
+</body>	
+</html>
