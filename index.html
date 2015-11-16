@@ -6,7 +6,7 @@
 </head>
 <body>
     <ul id="cat-list"></ul>
-    <div id="cat">
+    <div id="cat" data-bind="with: currentCat">
     <!-- knockout does not need html id's. it needs data binding. We dont have to take it out but here taken out for clarity. We will then add a class so that CSS can find it.-->
 <!--     <h2 id="cat-name"></h2>
         <div id="cat-count"></div>
@@ -14,12 +14,12 @@
 
 <!-- Data-bind here will set h2 text to the 'name in the viewModel in js file. If we want to put multiple bindings inside of a data-bind we use multiple commas. 
 To bind and attribute use attr: {src: imgSrc}. If imgSrc changes in view model, the attr: {src: imgSrc} will change -->
-        <h2 data-bind="text: currentCat().name"></h2> 
-        <h3 data-bind="text: currentCat().title"></h3>
-        <div data-bind="text: currentCat().clickCount"></div>
-        <img src="" alt="cute cat" data-bind="click: incrementCounter, attr: {src: currentCat().imgSrc}">
+        <h2 data-bind="text: name"></h2> 
+        <h3 data-bind="text: title"></h3>
+        <div data-bind="text: clickCount"></div>
+        <img src="" alt="cute cat" data-bind="click: $parent.incrementCounter, attr: {src: imgSrc}">
         <h4>Nicknames</h4>
-        <ul data-bind="foreach: currentCat().nickNames">
+        <ul data-bind="foreach: nickNames">
             <li>
             <span data-bind="text: nickName"></span>
             </li>

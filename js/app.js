@@ -32,7 +32,7 @@ var Cat = function() {
 }
 
 var ViewModel = function() {
-
+	var self = this;
 	// this is how we create a new cat.
 	// this new cat is a ko observable function.
 	this.currentCat = ko.observable( new Cat() );
@@ -43,7 +43,7 @@ var ViewModel = function() {
 	// knockout is handling view -> model, model -> view sync for us. We are no longer
 	// asking the octopus to go get the information from the model for us.
 	this.incrementCounter = function() {
-		this.currentCat().clickCount(this.currentCat().clickCount() + 1);
+		self.currentCat().clickCount(self.currentCat().clickCount() + 1);
 	};
 };
 
