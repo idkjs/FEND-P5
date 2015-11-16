@@ -18,6 +18,12 @@ To bind and attribute use attr: {src: imgSrc}. If imgSrc changes in view model, 
         <h3 data-bind="text: catLevel"></h3>
         <div data-bind="text: clickCount"></div>
         <img src="" alt="cute cat" data-bind="click: incrementCounter, attr: {src: imgSrc}">
+        <h4>Nicknames</h4>
+        <ul data-bind="foreach: nickNames">
+            <li>
+            <span data-bind="text: nickName"></span>
+            </li>
+        </ul>
     </div>
     <script src="js/lib/knockout-3.2.0.js"></script>
     <script src="js/app.js"></script>
