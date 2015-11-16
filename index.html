@@ -14,12 +14,12 @@
 
 <!-- Data-bind here will set h2 text to the 'name in the viewModel in js file. If we want to put multiple bindings inside of a data-bind we use multiple commas. 
 To bind and attribute use attr: {src: imgSrc}. If imgSrc changes in view model, the attr: {src: imgSrc} will change -->
-        <h2 data-bind="text: name"></h2> 
-        <h3 data-bind="text: catLevel"></h3>
-        <div data-bind="text: clickCount"></div>
-        <img src="" alt="cute cat" data-bind="click: incrementCounter, attr: {src: imgSrc}">
+        <h2 data-bind="text: currentCat().name"></h2> 
+        <h3 data-bind="text: currentCat().title"></h3>
+        <div data-bind="text: currentCat().clickCount"></div>
+        <img src="" alt="cute cat" data-bind="click: incrementCounter, attr: {src: currentCat().imgSrc}">
         <h4>Nicknames</h4>
-        <ul data-bind="foreach: nickNames">
+        <ul data-bind="foreach: currentCat().nickNames">
             <li>
             <span data-bind="text: nickName"></span>
             </li>
