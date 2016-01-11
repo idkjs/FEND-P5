@@ -9,7 +9,7 @@
         <h1>Cats</h1>
         <!-- foreach tells ko that catlist is an array and to iterate over it. -->
         <ul data-bind="foreach: catList"> 
-            <li >
+            <li>
             <!-- span tell ko what from the array to publish here. -->
             <button data-bind="click: $parent.setClickedCat"><span data-bind="text: name"></span></button>
             </li>
